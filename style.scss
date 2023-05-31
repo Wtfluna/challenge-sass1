@@ -1,9 +1,19 @@
+@import "_partial";
+
 $main-color: #6b717f;
 $backcolor-success: green;
 $backcolor-error: red;
 $backcolor-warning: orange;
 $h-color: #BF4080;
 $main-font: 100% "Space Mono", monospace;
+$general-padding: 20px;
+$footer-h3-padding-multiplier: 2;
+
+@mixin articles-shadows($main-color) {
+    box-shadow: 10px 15px -4px $main-color;
+    -webkit-box-shadow: 10px 10px 15px -4px $main-color;
+    -moz-box-shadow: 10px 10px 15px -4px $main-color;
+}
 
 .alerts {
     border: 1px solid #8C8C8C;
@@ -26,8 +36,6 @@ $main-font: 100% "Space Mono", monospace;
     }
 }
 
-
-
 body {
     font: $main-font;
     color: $main-color;
@@ -37,7 +45,9 @@ body {
     overflow-x: hidden;
 
     main {
-        padding: 0 1em;
+        padding: $general-padding;
+        padding-top: 0;
+        padding-bottom: 0;
 
         article {
             display: flex;
@@ -49,10 +59,8 @@ body {
             flex-grow: 1;
             flex-basis: 45%;
             border: 1px #8C8C8C solid;
-            -webkit-box-shadow: 10px 10px 15px -4px $main-color;
-            -moz-box-shadow: 10px 10px 15px -4px $main-color;
-            box-shadow: 10px 10px 15px -4px $main-color;
-            padding: 16px;
+            @include articles-shadows($main-color);
+            padding: $general-padding;
             margin: 16px;
             clear: both;
             overflow: auto;
@@ -75,7 +83,7 @@ body {
             margin-bottom: 1.6em;
             max-width: 100%;
             overflow: auto;
-            padding: 1em 1.5em;
+            padding: $general-padding;
             display: block;
             word-wrap: break-word;
         }
@@ -103,18 +111,18 @@ body {
         h3 {
             text-align: center;
             font-size: 1.5em;
-            padding: 32px;
+            padding: $footer-h3-padding-multiplier;
             margin-bottom: 0px;
         }
 
         .messages {
-            padding: 16px;
+            padding: $general-padding;
 
             .success,
             .error,
             .warning {
                 border: 1px solid #8C8C8C;
-                padding: 16px;
+                padding: $general-padding;
                 color: #fff;
             }
 
