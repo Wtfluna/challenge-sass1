@@ -5,6 +5,28 @@ $backcolor-warning: orange;
 $h-color: #BF4080;
 $main-font: 100% "Space Mono", monospace;
 
+.alerts {
+    border: 1px solid #8C8C8C;
+    padding: 16px;
+    color: #fff;
+
+    &--success {
+        @extend .alerts;
+        background-color: $backcolor-success;
+    }
+
+    &--error {
+        @extend .alerts;
+        background-color: $backcolor-error;
+    }
+
+    &--warning {
+        @extend .alerts;
+        background-color: $backcolor-warning;
+    }
+}
+
+
 
 body {
     font: $main-font;
@@ -20,6 +42,7 @@ body {
         article {
             display: flex;
             flex-wrap: wrap;
+
         }
 
         article section {
@@ -66,46 +89,54 @@ body {
             float: right;
             width: 40%;
         }
-    }
 
-    h1,
-    h2,
-    h3 {
-        color: $h-color;
-    }
+        h1,
+        h2,
+        h3 {
+            color: $h-color;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    h3 {
-        text-align: center;
-        font-size: 1.5em;
-        padding: 32px;
-        margin-bottom: 0px;
-    }
+        h3 {
+            text-align: center;
+            font-size: 1.5em;
+            padding: 32px;
+            margin-bottom: 0px;
+        }
 
-    .messages {
-        padding: 16px;
-    }
+        .messages {
+            padding: 16px;
 
-    .success,
-    .error,
-    .warning {
-        border: 1px solid #8C8C8C;
-        padding: 16px;
-        color: #fff;
-    }
+            .success,
+            .error,
+            .warning {
+                border: 1px solid #8C8C8C;
+                padding: 16px;
+                color: #fff;
+            }
 
-    .success {
-        background-color: $backcolor-success;
-    }
+            .success {
+                background-color: $backcolor-success;
+            }
 
-    .error {
-        background-color: $backcolor-error;
-    }
+            .error {
+                background-color: $backcolor-error;
 
-    .warning {
-        background-color: $backcolor-warning;
+                &:hover {
+                    background-color: green;
+                }
+            }
+
+            .warning {
+                background-color: $backcolor-warning;
+            }
+
+
+
+        }
+
     }
 }
